@@ -21,6 +21,6 @@ Route::get('/', function () {
 
 Route::get('/cliente', [ClienteController::class, 'index'])->name('cliente');
 Route::get('/cadastro', [CadastroController::class, 'index'])->name('cadastro');
-// Route::get('/clientes', [CadastroController::class, 'store']);
+Route::post('/cadastro', [CadastroController::class, 'store'])->name('cadastro.store');
 
 

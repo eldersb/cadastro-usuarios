@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateClienteRequest;
 use Illuminate\Http\Request;
+use App\Models\Cliente;
 
 class CadastroController extends Controller
 {
@@ -32,9 +34,13 @@ class CadastroController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateClienteRequest $request)
     {
-        //
+        $validated = $request->validated();
+
+        Cliente::create($validated);
+
+        return redirect()->route('index');
     }
 
     /**

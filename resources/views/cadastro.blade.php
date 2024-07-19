@@ -22,6 +22,9 @@
                 <h2>Cadastro de Clientes</h2>
 
                 <form action="" method="POST" >
+
+                    @csrf
+
                     <div class="mb-3">
                         <label for="name" class="form-label">Digite o nome do Cliente</label>
                         <input type="text" class="form-control w-75" id="name" placeholder="Nome do cliente">
