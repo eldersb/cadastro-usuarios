@@ -20,35 +20,36 @@
         <div class="container ">
             <div class="row">
                 <div class="col-md-12">
-                    <h2>Cadastro de Clientes</h2>
 
-                    <form action="" method="POST" >
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Digite o nome do Cliente</label>
-                            <input type="text" class="form-control w-75" id="name" placeholder="Nome do cliente">
-                          </div>
-                          <div class="mb-3">
-                            <label for="email" class="form-label">Digite o email do cliente:</label>
-                            <input type="email" class="form-control w-75" id="email" placeholder="cliente@example.com">
-                          </div>
-                          <div class="mb-3">
-                            <label for="telefone" class="form-label">Digite o telefone do cliente</label>
-                            <input type="text" class="form-control w-75" id="telefone" placeholder="7199999999">
-                          </div>
-                          <div class="mb-3">
-                            <label for="fornecedor" class="form-label">Informe o fornecedor</label>
-                            <input type="text" class="form-control w-75" id="fornecedor" placeholder="Fornecedor">
-                          </div>
-                          <div class="mb-3">
-                            <label for="conferente" class="form-label">Informe o conferente</label>
-                            <input type="text" class="form-control w-75" id="conferente" placeholder="Conferente">
-                          </div>
+                    <h2>Listagem de Clientes</h2>
 
-                          <button type="submit" class="btn btn-primary">Cadastrar</button>
-                          <button type="submit" class="btn btn-danger">Limpar</button>
+                    <table class="table mt-5">
+                        <thead class="table-secondary">
+                          <tr>
+                            <th>#</th>
+                            <th>Nome do Cliente</th>
+                            <th>Email do cliente</th>
+                            <th>Telefone do cliente</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                                @foreach ($clientes as $cliente)
+                                <tr>
+                                    <td>{{ $cliente->id }}</td>
+                                    <td>{{ $cliente->name }}</td>
+                                    <td>{{ $cliente->email }}</td>
+                                    <td>{{ $cliente->telefone }}</td>
+                                </tr>
+
+                                @endforeach
 
 
-                    </form>
+                        </tbody>
+                      </table>
+
+
+
                 </div>
             </div>
         </div>

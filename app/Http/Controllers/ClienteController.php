@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Cliente;
 
-class CadastroController extends Controller
+class ClienteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,11 @@ class CadastroController extends Controller
      */
     public function index()
     {
-        return view('cadastro');
+
+        $clientes = Cliente::all();
+
+        return view('index', ['clientes' => $clientes]);
+
     }
 
     /**
@@ -23,7 +28,7 @@ class CadastroController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -34,7 +39,7 @@ class CadastroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**

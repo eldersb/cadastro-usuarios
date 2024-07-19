@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CadastroController;
+use App\Http\Controllers\ClienteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,5 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/cadastro', [CadastroController::class, 'index']);
+Route::get('/cliente', [ClienteController::class, 'index'])->name('cliente');
+Route::get('/cadastro', [CadastroController::class, 'index'])->name('cadastro');
+// Route::get('/clientes', [CadastroController::class, 'store']);
+
 

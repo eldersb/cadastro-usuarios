@@ -9,7 +9,11 @@
             <ul class="navbar-nav mb-2 mb-lg-0">
 
                 <li class="nav-item">
-                    <a class="nav-link d-flex gap-1" href="#"> <i class="bi bi-person-circle"></i>Cadastro</a>
+                    <a class="nav-link d-flex gap-1" href="{{ route('cliente') }}"> <i class="bi bi-person-circle"></i>Listagem de Clientes</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link d-flex gap-1" href="{{ route('cadastro') }}"> <i class="bi bi-person-circle"></i>Cadastro</a>
                 </li>
 
                 <li class="nav-item">
