@@ -38,17 +38,11 @@ class CadastroController extends Controller
     {
         $dadosValidados = $request->validated();
 
-        try {
             Cliente::create($dadosValidados);
 
             session()->flash('success', 'Cliente criado com sucesso!');
 
-        } catch (Exception $e) {
 
-            session()->flash('error',
-            'Ocorreu um erro ao criar o cliente!' . $e->getMessage());
-
-        }
 
         return redirect()->route('cadastro.create');
 

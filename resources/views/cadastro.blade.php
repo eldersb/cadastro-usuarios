@@ -33,21 +33,24 @@
                     <div class="mb-3">
                         <label for="name" class="form-label">Digite o nome do Cliente</label>
                         <input type="text" class="form-control w-75" name="name" id="name"
-                            placeholder="Nome do cliente" required>
+                            placeholder="Nome do cliente" required value="{{ old('nome') }}">
+
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Digite o email do cliente:</label>
                         <input type="email" class="form-control w-75" name="email" id="email"
-                            placeholder="cliente@example.com" >
+                            placeholder="cliente@example.com" value="{{ old('email') }}">
+
                     </div>
                     <div class="mb-3">
                         <label for="telefone" class="form-label">Digite o telefone do cliente</label>
                         <input type="text" class="form-control w-75" name="telefone" id="telefone"
-                            placeholder="7199999999">
+                            placeholder="7199999999" value="{{ old('telefone') }}">
+
                     </div>
 
                     <button type="submit" class="btn btn-primary">Cadastrar</button>
-                    <button type="submit" class="btn btn-danger">Limpar</button>
+                    <a type="submit" class="btn btn-warning" href=" {{ route('cliente') }}">Listagem de clientes</a>
                 </form>
 
 
@@ -57,41 +60,29 @@
     </div>
 
 
-        {{-- @if (session('error'))
-        <div class="alert {{ session('alert-class') }} alert-dismissible fade show mt-3" role="alert">
-            {{ session('error') }}
-        </div>
-        @endif --}}
-
-
-
-
-
 </body>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        console.log('Success:', '{{ session('success') }}');
-        console.log('Error:', '{{ session('error') }}');
+
+                @if (session('success'))
+                    Swal.fire({
+                        title: 'Dados válidos!',
+                        text: '{{ session('success') }}',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    });
 
 
-    @if (session('success'))
-                Swal.fire({
-                    title: 'Dados validos!',
-                    text: '{{ session('success') }}',
-                    icon: 'success',
-                    confirmButtonText: 'OK'
-                });
+                    @elseif ($errors->any())
+                            Swal.fire({
+                                title: 'Dados inválidos!!',
+                                html: @json(implode('<br>', $errors->all())),
+                                icon: 'error',
+                                confirmButtonText: 'OK'
+                            });
 
-     @elseif (session('error'))
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops... Dados inválidos!'',
-            text: '{{ session('error') }}',
-            confirmButtonText: 'OK'
-        });
-
-    @endif
+@endif
 
 });
 </script>
