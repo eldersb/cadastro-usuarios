@@ -24,34 +24,38 @@
         <div class="row">
             <div class="col-md-12">
 
-                <h2>Cadastro de Clientes</h2>
+                <div class="d-flex justify-content-center align-items-center">
+                    <form action="{{ route('cadastro.store') }}" method="POST" class="col-md-8">
 
-                <form action="{{ route('cadastro.store') }}" method="POST">
+                        <div class="p-1  bg-info bg-opacity-10 border border-info rounded mb-3">
+                            <h2 class="p-2 m-2">Cadastro de Clientes</h2>
+                        </div>
 
-                    @csrf
+                        @csrf
 
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Digite o nome do Cliente</label>
-                        <input type="text" class="form-control w-75" name="name" id="name"
-                            placeholder="Nome do cliente" required value="{{ old('nome') }}">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Digite o nome do Cliente</label>
+                            <input type="text" class="form-control" name="name" id="name"
+                                placeholder="Nome do cliente" required value="{{ old('name') }}">
 
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Digite o email do cliente:</label>
-                        <input type="email" class="form-control w-75" name="email" id="email"
-                            placeholder="cliente@example.com" value="{{ old('email') }}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Digite o email do cliente:</label>
+                            <input type="email" class="form-control " name="email" id="email"
+                                placeholder="cliente@example.com" value="{{ old('email') }}">
 
-                    </div>
-                    <div class="mb-3">
-                        <label for="telefone" class="form-label">Digite o telefone do cliente</label>
-                        <input type="text" class="form-control w-75" name="telefone" id="telefone"
-                            placeholder="7199999999" value="{{ old('telefone') }}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="telefone" class="form-label">Digite o telefone do cliente</label>
+                            <input type="text" class="form-control mb-3" name="telefone" id="telefone"
+                                placeholder="7199999999" value="{{ old('telefone') }}">
+                        </div>
 
-                    </div>
+                        <button type="submit" class="btn btn-primary">Cadastrar</button>
+                        <a type="submit" class="btn btn-warning" href=" {{ route('cliente') }}">Listagem de clientes</a>
+                    </form>
 
-                    <button type="submit" class="btn btn-primary">Cadastrar</button>
-                    <a type="submit" class="btn btn-warning" href=" {{ route('cliente') }}">Listagem de clientes</a>
-                </form>
+                </div>
 
 
 
