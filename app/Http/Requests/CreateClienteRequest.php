@@ -24,9 +24,20 @@ class CreateClienteRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|min:3',
-            'email' => 'required',
-            'telefone' => 'required'
+            'name' => 'required|string|min:3',
+            'email' => 'required|string|email|unique:clientes',
+            'telefone' => 'required|max:11'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'nome.required' => 'O campo Nome é obrigatório.',
+            'email.required' => 'O campo Email é obrigatório.',
+            'email.email' => 'O campo Email deve ser um endereço de e-mail válido.',
+            'email.unique' => 'O Email já está em uso.',
+            'telefone.required' => 'O campo Telefone é obrigatório.',
         ];
     }
 }

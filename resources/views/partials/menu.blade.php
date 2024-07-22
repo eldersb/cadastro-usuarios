@@ -13,7 +13,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link d-flex gap-1" href="{{ route('cadastro') }}"> <i class="bi bi-person-circle"></i>Cadastro</a>
+                    <a class="nav-link d-flex gap-1" href="{{ route('cadastro.create') }}"> <i class="bi bi-person-circle"></i>Cadastro</a>
                 </li>
 
                 <li class="nav-item">

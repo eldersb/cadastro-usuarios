@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('/cliente', [ClienteController::class, 'index'])->name('cliente');
-Route::get('/cadastro', [CadastroController::class, 'index'])->name('cadastro');
+Route::get('/cadastro', [CadastroController::class, 'create'])->name('cadastro.create');
 Route::post('/cadastro', [CadastroController::class, 'store'])->name('cadastro.store');
 
 

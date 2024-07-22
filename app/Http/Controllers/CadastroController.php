@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateClienteRequest;
 use Illuminate\Http\Request;
 use App\Models\Cliente;
+use Exception;
 
 class CadastroController extends Controller
 {
@@ -15,7 +16,6 @@ class CadastroController extends Controller
      */
     public function index()
     {
-        return view('cadastro');
     }
 
     /**
@@ -25,7 +25,7 @@ class CadastroController extends Controller
      */
     public function create()
     {
-        //
+        return view('cadastro');
     }
 
     /**
@@ -36,11 +36,22 @@ class CadastroController extends Controller
      */
     public function store(CreateClienteRequest $request)
     {
-        $validated = $request->validated();
+        $dadosValidados = $request->validated();
 
-        Cliente::create($validated);
+        try {
+            Cliente::create($dadosValidados);
 
-        return redirect()->route('index');
+            session()->flash('success', 'Cliente criado com sucesso!');
+
+        } catch (Exception $e) {
+
+            session()->flash('error',
+            'Ocorreu um erro ao criar o cliente!' . $e->getMessage());
+
+        }
+
+        return redirect()->route('cadastro.create');
+
     }
 
     /**
