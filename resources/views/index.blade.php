@@ -32,13 +32,14 @@
 
                             <table class="table mt-4">
                                 <thead class="table-success">
+
                                   <tr>
                                     <th>#</th>
                                     <th>Nome</th>
                                     <th>Email</th>
                                     <th>Telefone</th>
                                     <th></th>
-                                  </tr>
+                                </tr>
                                 </thead>
                                 <tbody>
 
@@ -48,11 +49,12 @@
                                             <td>{{ $cliente->name }}</td>
                                             <td>{{ $cliente->email }}</td>
                                             <td>{{ $cliente->telefone }}</td>
+
                                             <td>
                                                 <form action=" {{ route('cliente.destroy', ['id' => $cliente->id]) }}" method="post">
                                                     @csrf
                                                     @method("delete")
-                                                    <a class="btn btn-sm btn-success" href="{{ route('cliente.edit', ['id' => $cliente->id]) }}">Editar</a>
+                                                    <a class="btn btn-sm btn-info text-light" href="{{ route('cliente.edit', ['id' => $cliente->id]) }}">Editar</a>
                                                     <button type="submit" class="btn btn-sm btn-danger" >Excluir</button>
                                                 </form>
 
@@ -63,9 +65,12 @@
 
 
                                 </tbody>
+
                               </table>
 
-
+                              <div class="d-flex justify-content-end align-items-center">
+                                <a href=" {{ route('cadastro.create') }}" class="btn btn-info text-light"> Cadastrar novo cliente</a>
+                            </div>
                         </div>
 
 
