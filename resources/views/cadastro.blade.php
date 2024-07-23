@@ -26,7 +26,7 @@
                 <div class="d-flex justify-content-center align-items-center">
                     <form action="{{ route('cadastro.store') }}" method="POST" class="col-md-8">
 
-                        <div class="p-1 bg-success bg-opacity-80 border border-success rounded mb-3">
+                        <div class="p-1 bg-success bg-opacity-80 border border-success rounded mt-3 mb-3">
                             <h2 class="p-2 m-2 text-light text-center">Cadastro de Clientes</h2>
                         </div>
 
@@ -50,8 +50,8 @@
                                 placeholder="7199999999" value="{{ old('telefone') }}">
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Cadastrar</button>
-                        <a type="submit" class="btn btn-success" href=" {{ route('cliente') }}">Listagem de clientes</a>
+                        <button type="submit" class="btn btn-primary mt-2">Cadastrar</button>
+                        <a type="submit" class="btn btn-success mt-2" href=" {{ route('cliente') }}">Listagem de clientes</a>
                     </form>
 
                 </div>

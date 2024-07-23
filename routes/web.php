@@ -20,8 +20,12 @@ Route::get('/', function () {
 });
 
 Route::get('/cliente', [ClienteController::class, 'index'])->name('cliente');
+
 Route::get('/cliente/editar/{id}', [ClienteController::class, 'edit'])->name('cliente.edit');
-Route::post('/cliente/editar/{id}', [ClienteController::class, 'update'])->name('cliente.update');
+Route::put('/cliente/editar/{id}', [ClienteController::class, 'update'])->name('cliente.update');
+Route::delete('/cliente/editar/{id}', [ClienteController::class, 'destroy'])->name('cliente.destroy');
+
+
 
 Route::get('/cadastro', [CadastroController::class, 'create'])->name('cadastro.create');
 Route::post('/cadastro', [CadastroController::class, 'store'])->name('cadastro.store');

@@ -30,7 +30,7 @@
                                 <h2 class="p-2 m-2 text-light text-center">Listagem de Clientes</h2>
                             </div>
 
-                            <table class="table mt-5">
+                            <table class="table mt-4">
                                 <thead class="table-success">
                                   <tr>
                                     <th>#</th>
@@ -49,8 +49,13 @@
                                             <td>{{ $cliente->email }}</td>
                                             <td>{{ $cliente->telefone }}</td>
                                             <td>
-                                                <a class="btn btn-sm btn-success" href="{{ route('cliente.edit', ['id' => $cliente->id]) }}">Editar</a>
-                                                <a class="btn btn-sm btn-danger" href="">Excluir</a>
+                                                <form action=" {{ route('cliente.destroy', ['id' => $cliente->id]) }}">
+                                                    @csrf
+                                                    @method("delete")
+                                                    <a class="btn btn-sm btn-success" href="{{ route('cliente.edit', ['id' => $cliente->id]) }}">Editar</a>
+                                                    <button type="submit" class="btn  btn-sm btn-danger" >Excluir</button>
+                                                </form>
+                                                
                                             </td>
                                         </tr>
 

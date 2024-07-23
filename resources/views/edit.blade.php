@@ -22,13 +22,14 @@
                 <div class="col-md-12">
 
                     <div class="d-flex justify-content-center align-items-center">
-                        <form action="{{ route('cliente.update', ['id' => $cliente->id]) }}" method="POST" class="col-md-8">
+                        <form action="{{ route('cliente.update', ['id' => $cliente->id]) }}" method="post" class="col-md-8">
 
                             <div class="p-1 bg-success bg-opacity-80 border border-success rounded mb-3">
                                 <h2 class="p-2 m-2 text-light text-center">Atualizar Clientes</h2>
                             </div>
 
                             @csrf
+                            @method('put')
 
                             <div class="mb-3">
                                 <label for="name" class="form-label">Digite o nome do Cliente</label>

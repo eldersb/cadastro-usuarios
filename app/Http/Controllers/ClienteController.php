@@ -79,13 +79,13 @@ class ClienteController extends Controller
      */
     public function update(CreateClienteRequest $request, $id)
     {
-        // $clienteEncontrado = Cliente::find($id);
+         $clienteEncontrado = Cliente::find($id);
 
-        // $clienteEncontrado->update($request->all());
+         $clienteEncontrado->update($request->all());
 
-        // session()->flash("success", "O registro foi atualizado com sucesso!");
+         session()->flash("success", "O registro foi atualizado com sucesso!");
 
-        // return redirect()->back();
+         return redirect()->route('cliente');
 
     }
 
@@ -97,6 +97,13 @@ class ClienteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $clienteEncontrado = Cliente::find($id);
+
+        $clienteEncontrado->delete();
+
+        session()->flash("success", "O registro foi deletado com sucesso!");
+
+        return redirect()->route('cliente');
+
     }
 }
