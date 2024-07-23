@@ -20,35 +20,39 @@
         <div class="container ">
             <div class="row">
                 <div class="col-md-12">
-                    <h2>Atualizar Clientes</h2>
 
-                    <form action="" method="POST" >
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Digite o nome do Cliente</label>
-                            <input type="text" class="form-control w-75" id="name" placeholder="Nome do cliente">
-                          </div>
-                          <div class="mb-3">
-                            <label for="email" class="form-label">Digite o email do cliente:</label>
-                            <input type="email" class="form-control w-75" id="email" placeholder="cliente@example.com">
-                          </div>
-                          <div class="mb-3">
-                            <label for="telefone" class="form-label">Digite o telefone do cliente</label>
-                            <input type="text" class="form-control w-75" id="telefone" placeholder="7199999999">
-                          </div>
-                          <div class="mb-3">
-                            <label for="fornecedor" class="form-label">Informe o fornecedor</label>
-                            <input type="text" class="form-control w-75" id="fornecedor" placeholder="Fornecedor">
-                          </div>
-                          <div class="mb-3">
-                            <label for="conferente" class="form-label">Informe o conferente</label>
-                            <input type="text" class="form-control w-75" id="conferente" placeholder="Conferente">
-                          </div>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <form action="{{ route('cliente.update', ['id' => $cliente->id]) }}" method="POST" class="col-md-8">
 
-                          <button type="submit" class="btn btn-primary">Cadastrar</button>
-                          <button type="submit" class="btn btn-danger">Limpar</button>
+                            <div class="p-1 bg-success bg-opacity-80 border border-success rounded mb-3">
+                                <h2 class="p-2 m-2 text-light text-center">Atualizar Clientes</h2>
+                            </div>
 
+                            @csrf
 
-                    </form>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Digite o nome do Cliente</label>
+                                <input type="text" class="form-control" name="name" id="name"
+                                    placeholder="Nome do cliente" required value="{{ $cliente->name }}">
+
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Digite o email do cliente:</label>
+                                <input type="email" class="form-control " name="email" id="email"
+                                    placeholder="cliente@example.com" value="{{ $cliente->email }}">
+
+                            </div>
+                            <div class="mb-3">
+                                <label for="telefone" class="form-label">Digite o telefone do cliente</label>
+                                <input type="text" class="form-control mb-3" name="telefone" id="telefone"
+                                    placeholder="7199999999" value="{{ $cliente->telefone }}">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Editar</button>
+                            <a type="submit" class="btn btn-success" href=" {{ route('cliente') }}">Listagem de clientes</a>
+                        </form>
+
+                    </div>
                 </div>
             </div>
         </div>

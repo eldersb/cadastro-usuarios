@@ -15,38 +15,57 @@
         @include("partials.menu")
     </header>
 
+
+
     <section>
 
         <div class="container ">
             <div class="row">
                 <div class="col-md-12">
 
-                    <h2>Listagem de Clientes</h2>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="container-child col-md-8">
 
-                    <table class="table mt-5">
-                        <thead class="table-secondary">
-                          <tr>
-                            <th>#</th>
-                            <th>Nome do Cliente</th>
-                            <th>Email do cliente</th>
-                            <th>Telefone do cliente</th>
-                          </tr>
-                        </thead>
-                        <tbody>
+                            <div class="p-1 bg-success bg-opacity-80 border border-success rounded mt-3 mb-3">
+                                <h2 class="p-2 m-2 text-light text-center">Listagem de Clientes</h2>
+                            </div>
 
-                                @foreach ($clientes as $cliente)
-                                <tr>
-                                    <td>{{ $cliente->id }}</td>
-                                    <td>{{ $cliente->name }}</td>
-                                    <td>{{ $cliente->email }}</td>
-                                    <td>{{ $cliente->telefone }}</td>
-                                </tr>
+                            <table class="table mt-5">
+                                <thead class="table-success">
+                                  <tr>
+                                    <th>#</th>
+                                    <th>Nome</th>
+                                    <th>Email</th>
+                                    <th>Telefone</th>
+                                    <th></th>
+                                  </tr>
+                                </thead>
+                                <tbody>
 
-                                @endforeach
+                                        @foreach ($clientes as $cliente)
+                                        <tr>
+                                            <td>{{ $cliente->id }}</td>
+                                            <td>{{ $cliente->name }}</td>
+                                            <td>{{ $cliente->email }}</td>
+                                            <td>{{ $cliente->telefone }}</td>
+                                            <td>
+                                                <a class="btn btn-sm btn-success" href="{{ route('cliente.edit', ['id' => $cliente->id]) }}">Editar</a>
+                                                <a class="btn btn-sm btn-danger" href="">Excluir</a>
+                                            </td>
+                                        </tr>
+
+                                        @endforeach
 
 
-                        </tbody>
-                      </table>
+                                </tbody>
+                              </table>
+
+
+                        </div>
+
+
+                    </div>
+
 
 
 

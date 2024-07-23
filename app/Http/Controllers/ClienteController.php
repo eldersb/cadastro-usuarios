@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateClienteRequest;
 use Illuminate\Http\Request;
 use App\Models\Cliente;
 
@@ -48,9 +49,10 @@ class ClienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        // return view('edit');
+
     }
 
     /**
@@ -61,7 +63,11 @@ class ClienteController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $cliente = Cliente::find($id);
+
+        return view('edit', compact('cliente'));
+
     }
 
     /**
@@ -71,9 +77,16 @@ class ClienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateClienteRequest $request, $id)
     {
-        //
+        // $clienteEncontrado = Cliente::find($id);
+
+        // $clienteEncontrado->update($request->all());
+
+        // session()->flash("success", "O registro foi atualizado com sucesso!");
+
+        // return redirect()->back();
+
     }
 
     /**
