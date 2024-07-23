@@ -49,13 +49,13 @@
                                             <td>{{ $cliente->email }}</td>
                                             <td>{{ $cliente->telefone }}</td>
                                             <td>
-                                                <form action=" {{ route('cliente.destroy', ['id' => $cliente->id]) }}">
+                                                <form action=" {{ route('cliente.destroy', ['id' => $cliente->id]) }}" method="post">
                                                     @csrf
                                                     @method("delete")
                                                     <a class="btn btn-sm btn-success" href="{{ route('cliente.edit', ['id' => $cliente->id]) }}">Editar</a>
-                                                    <button type="submit" class="btn  btn-sm btn-danger" >Excluir</button>
+                                                    <button type="submit" class="btn btn-sm btn-danger" >Excluir</button>
                                                 </form>
-                                                
+
                                             </td>
                                         </tr>
 

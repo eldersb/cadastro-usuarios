@@ -40,7 +40,7 @@ class CadastroController extends Controller
 
             Cliente::create($dadosValidados);
 
-            session()->flash('success', 'Cliente criado com sucesso!');
+            session()->flash('success', 'Cliente cadastrado com sucesso!');
 
 
 

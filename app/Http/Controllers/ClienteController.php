@@ -79,11 +79,12 @@ class ClienteController extends Controller
      */
     public function update(CreateClienteRequest $request, $id)
     {
+
          $clienteEncontrado = Cliente::find($id);
 
          $clienteEncontrado->update($request->all());
 
-         session()->flash("success", "O registro foi atualizado com sucesso!");
+         session()->flash("edit", "O registro foi atualizado com sucesso!");
 
          return redirect()->route('cliente');
 
@@ -101,7 +102,7 @@ class ClienteController extends Controller
 
         $clienteEncontrado->delete();
 
-        session()->flash("success", "O registro foi deletado com sucesso!");
+        session()->flash("delete", "O registro foi deletado com sucesso!");
 
         return redirect()->route('cliente');
 

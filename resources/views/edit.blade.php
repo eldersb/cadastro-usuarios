@@ -24,12 +24,12 @@
                     <div class="d-flex justify-content-center align-items-center">
                         <form action="{{ route('cliente.update', ['id' => $cliente->id]) }}" method="post" class="col-md-8">
 
+                            @csrf
+                            @method("put")
+
                             <div class="p-1 bg-success bg-opacity-80 border border-success rounded mb-3">
                                 <h2 class="p-2 m-2 text-light text-center">Atualizar Clientes</h2>
                             </div>
-
-                            @csrf
-                            @method('put')
 
                             <div class="mb-3">
                                 <label for="name" class="form-label">Digite o nome do Cliente</label>
@@ -50,7 +50,7 @@
                             </div>
 
                             <button type="submit" class="btn btn-primary">Editar</button>
-                            <a type="submit" class="btn btn-success" href=" {{ route('cliente') }}">Listagem de clientes</a>
+                            <a class="btn btn-success" href=" {{ route('cliente') }}">Listagem de clientes</a>
                         </form>
 
                     </div>

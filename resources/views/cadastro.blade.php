@@ -24,7 +24,7 @@
             <div class="col-md-12">
 
                 <div class="d-flex justify-content-center align-items-center">
-                    <form action="{{ route('cadastro.store') }}" method="POST" class="col-md-8">
+                    <form action="{{ route('cadastro.store') }}" method="post" class="col-md-8">
 
                         <div class="p-1 bg-success bg-opacity-80 border border-success rounded mt-3 mb-3">
                             <h2 class="p-2 m-2 text-light text-center">Cadastro de Clientes</h2>
