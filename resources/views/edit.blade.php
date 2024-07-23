@@ -22,7 +22,7 @@
                 <div class="col-md-12">
 
                     <div class="d-flex justify-content-center align-items-center">
-                        <form action="{{ route('cliente.update', ['id' => $cliente->id]) }}" method="post" class="col-md-8">
+                        <form  id="editarCliente" action="{{ route('cliente.update', ['id' => $cliente->id]) }}" method="post" class="col-md-8">
 
                             @csrf
                             @method("put")
@@ -49,7 +49,7 @@
                                     placeholder="7199999999" value="{{ $cliente->telefone }}">
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Editar</button>
+                            <button type="button" class="btn btn-primary" onclick="confirmarExclusao()">Editar</button>
                             <a class="btn btn-success" href=" {{ route('cliente') }}">Listagem de clientes</a>
                         </form>
 
@@ -66,19 +66,27 @@
 </body>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    function confirmarExclusao() {
+        Swal.fire({
+            title: "Você deseja salvar as alterações?",
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: "Salvar",
+            denyButtonText: "Não salvar",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire("Salvo!", "", "success").then(() => {
+                    // Adiciona um atraso antes de submeter o formulário
+                    setTimeout(() => {
+                        document.getElementById('editarCliente').submit();
+                    }, 1000); // Atraso de 1 segundo
+                });
 
-                @if (session('edit'))
-                    Swal.fire({
-                        title: 'Dados válidos!',
-                        text: '{{ session('edit') }}',
-                        icon: 'success',
-                        confirmButtonText: 'OK'
-                    });
-
-                @endif
-
-    });
+            } else if (result.isDenied) {
+                Swal.fire("Alterações não salvas", "", "info");
+            }
+        });
+    }
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
