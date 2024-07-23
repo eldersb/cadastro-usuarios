@@ -62,6 +62,24 @@
     </section>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 </body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+                @if (session('edit'))
+                    Swal.fire({
+                        title: 'Dados válidos!',
+                        text: '{{ session('edit') }}',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    });
+
+                @endif
+
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
 </html>

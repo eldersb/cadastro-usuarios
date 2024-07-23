@@ -84,9 +84,9 @@ class ClienteController extends Controller
 
          $clienteEncontrado->update($request->all());
 
-         session()->flash("edit", "O registro foi atualizado com sucesso!");
+         session()->flash('edit', 'O registro foi atualizado com sucesso!');
 
-         return redirect()->route('cliente');
+         return redirect()->back();
 
     }
 
