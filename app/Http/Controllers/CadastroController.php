@@ -25,7 +25,7 @@ class CadastroController extends Controller
      */
     public function create()
     {
-        return view('cadastro');
+        // return view('cadastro');
     }
 
     /**
@@ -36,19 +36,18 @@ class CadastroController extends Controller
      */
     public function store(CreateClienteRequest $request)
     {
-        $arquivo = $request->file('cover');
-         $arquivo->store('cliente');
+        // $arquivo = $request->file('cover');
+        // $arquivo->store('cliente');
 
+        // $dadosValidados = $request->validated();
 
-         $dadosValidados = $request->validated();
-         $dadosValidados['cover'] = $arquivo->hashName();
+        // Cliente::create($dadosValidados);
 
-         Cliente::create($dadosValidados);
+        // $dadosValidados['cover'] = $arquivo->hashName();
 
-         session()->flash('success', 'Cliente cadastrado com sucesso!');
+        // session()->flash('success', 'Cliente cadastrado com sucesso!');
 
-
-         return redirect()->route('cadastro.create');
+        // return redirect()->route('cadastro.create');
 
     }
 

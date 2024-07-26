@@ -29,7 +29,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-      
+        return view('cadastro');
 
     }
 
@@ -42,7 +42,18 @@ class ClienteController extends Controller
     public function store(CreateClienteRequest $request)
     {
 
+        $arquivo = $request->file('cover');
+        $arquivo->store('cliente');
 
+        $dadosValidados = $request->validated();
+
+        Cliente::create($dadosValidados);
+
+        $dadosValidados['cover'] = $arquivo->hashName();
+
+        session()->flash('success', 'Cliente cadastrado com sucesso!');
+
+        return redirect()->route('cadastro.create');
 
     }
 

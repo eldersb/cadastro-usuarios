@@ -27,7 +27,7 @@
                             @csrf
                             @method("put")
 
-                            <div class="p-1 bg-success bg-opacity-80 border border-success rounded mb-3">
+                            <div class="p-1 bg-dark bg-opacity-80 border border-success rounded mb-3">
                                 <h2 class="p-2 m-2 text-light text-center">Atualizar Clientes</h2>
                             </div>
 
@@ -51,7 +51,7 @@
 
 
                             <button type="button" class="btn btn-primary" onclick="confirmarExclusao()">Editar</button>
-                            <a class="btn btn-success" href=" {{ route('cliente') }}">Listagem de clientes</a>
+                            <a class="btn btn-warning" href=" {{ route('cliente') }}">Listagem de clientes</a>
                         </form>
 
                     </div>

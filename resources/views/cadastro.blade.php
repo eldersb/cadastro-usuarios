@@ -58,7 +58,7 @@
                         </div>
 
                         <button type="submit" class="btn btn-primary mt-2">Cadastrar</button>
-                        <a type="submit" class="btn btn-dark text-light mt-2" href=" {{ route('cliente') }}">Listagem de clientes</a>
+                        <a type="submit" class="btn btn-warning  mt-2" href=" {{ route('cliente') }}">Listagem de clientes</a>
 
                     </form>
 
