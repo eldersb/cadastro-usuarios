@@ -24,19 +24,21 @@
                     <div class="d-flex justify-content-center align-items-center">
                         <div class="container-child col-sm-2 col-md-8">
 
-                            <div class="p-1 bg-success bg-opacity-80 border border-success rounded mt-3 mb-3">
+                            <div class="p-1 bg-dark bg-opacity-80 border border-success rounded mt-3 mb-3">
                                 <h2 class="p-2 m-2 text-light text-center">Listagem de Clientes</h2>
                             </div>
 
                             <table class="table table-responsive mt-4">
-                                <thead class="table-success">
+                                <thead class="table-secondary">
 
                                   <tr>
                                     <th>#</th>
                                     <th>Nome</th>
                                     <th>Email</th>
                                     <th>Telefone</th>
+                                    <th>Cadastrado:</th>
                                     <th></th>
+
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -47,12 +49,13 @@
                                             <td>{{ $cliente->name }}</td>
                                             <td>{{ $cliente->email }}</td>
                                             <td>{{ $cliente->telefone }}</td>
+                                            <td>{{ $cliente->created_at->format('d/m/Y à\s H:i')}}</td>
 
                                             <td>
                                                 <form action=" {{ route('cliente.destroy', ['id' => $cliente->id]) }}" method="post">
                                                     @csrf
                                                     @method("delete")
-                                                    <a class="btn btn-sm btn-info text-light" href="{{ route('cliente.edit', ['id' => $cliente->id]) }}">Editar</a>
+                                                    <a class="btn btn-sm btn-primary text-light" href="{{ route('cliente.edit', ['id' => $cliente->id]) }}">Editar</a>
                                                     <button type="submit" class="btn btn-sm btn-danger" >Excluir</button>
                                                 </form>
 
@@ -74,7 +77,7 @@
                                     {{ $clientes->links() }}
                                 </div>
 
-                                <a href=" {{ route('cadastro.create') }}" class="btn btn-info text-light"> Novo cliente</a>
+                                <a href=" {{ route('cadastro.create') }}" class="btn btn-primary text-light"> Novo cliente</a>
 
 
                               </div>

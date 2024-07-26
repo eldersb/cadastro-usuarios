@@ -36,15 +36,19 @@ class CadastroController extends Controller
      */
     public function store(CreateClienteRequest $request)
     {
-        $dadosValidados = $request->validated();
-
-            Cliente::create($dadosValidados);
-
-            session()->flash('success', 'Cliente cadastrado com sucesso!');
+        $arquivo = $request->file('cover');
+         $arquivo->store('cliente');
 
 
+         $dadosValidados = $request->validated();
+         $dadosValidados['cover'] = $arquivo->hashName();
 
-        return redirect()->route('cadastro.create');
+         Cliente::create($dadosValidados);
+
+         session()->flash('success', 'Cliente cadastrado com sucesso!');
+
+
+         return redirect()->route('cadastro.create');
 
     }
 

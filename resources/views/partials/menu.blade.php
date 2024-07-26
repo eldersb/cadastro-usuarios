@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-success mb-5" data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg bg-dark mb-5" data-bs-theme="dark">
     <div class="container">
         <a class="navbar-brand" href="#">Sistema de Cadastro</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
