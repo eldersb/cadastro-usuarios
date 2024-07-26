@@ -46,10 +46,9 @@ class ClienteController extends Controller
         $arquivo->store('cliente');
 
         $dadosValidados = $request->validated();
+        $dadosValidados['cover'] = $arquivo->hashName();
 
         Cliente::create($dadosValidados);
-
-        $dadosValidados['cover'] = $arquivo->hashName();
 
         session()->flash('success', 'Cliente cadastrado com sucesso!');
 

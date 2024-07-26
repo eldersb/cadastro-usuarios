@@ -31,7 +31,8 @@ class CreateClienteRequest extends FormRequest
         return [
             'name' => 'required|string|min:3',
             'email' => ['required', 'string','email',  Rule::unique('clientes')->ignore($id)],
-            'telefone' => 'required|max:11'
+            'telefone' => 'required|max:11',
+            'cover' => 'nullable'
         ];
     }
 
