@@ -16,7 +16,7 @@ class ClienteController extends Controller
     public function index()
     {
 
-        $clientes = Cliente::all();
+        $clientes = Cliente::paginate(5);
 
         return view('index', ['clientes' => $clientes]);
 
@@ -29,7 +29,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-
+        return view('cadastro');
     }
 
     /**
@@ -38,9 +38,22 @@ class ClienteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateClienteRequest $request)
     {
+        $dadosValidados = $request->validated();
 
+        $arquivo = $request->file('cover');
+        $arquivo->store('cliente');
+
+        $dadosValidados['cover'] = $arquivo->hasName();
+
+        Cliente::create($dadosValidados);
+
+        session()->flash('success', 'Cliente cadastrado com sucesso!');
+
+
+
+        return redirect()->route('cadastro.create');
     }
 
     /**

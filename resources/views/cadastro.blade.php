@@ -23,14 +23,15 @@
         <div class="row">
             <div class="col-md-12">
 
-                <div class="d-flex justify-content-center align-items-center">
-                    <form action="{{ route('cadastro.store') }}" method="post" class="col-md-8">
+                <div class="d-flex justify-content-center align-items-center" >
+                    <form action="{{ route('cadastro.store') }}" method="post" class="col-md-8" enctype="multipart/form-data">
 
                         <div class="p-1 bg-success bg-opacity-80 border border-success rounded mt-3 mb-3">
                             <h2 class="p-2 m-2 text-light text-center">Cadastro de Clientes</h2>
                         </div>
 
                         @csrf
+
 
                         <div class="mb-3">
                             <label for="name" class="form-label">Digite o nome do Cliente</label>
@@ -50,8 +51,15 @@
                                 placeholder="7199999999" value="{{ old('telefone') }}">
                         </div>
 
+                        <div class="mb-3">
+                            <label for="cover" class="form-label">Selecione uma imagem do seu computador</label>
+                            <input type="file" class="form-control" name="cover" id="cover">
+
+                        </div>
+
                         <button type="submit" class="btn btn-primary mt-2">Cadastrar</button>
                         <a type="submit" class="btn btn-dark text-light mt-2" href=" {{ route('cliente') }}">Listagem de clientes</a>
+
                     </form>
 
                 </div>

@@ -13,6 +13,7 @@ class Cliente extends Model
     protected $fillable = [
         'name',
         'email',
-        'telefone'
+        'telefone',
+        'cover'
     ];
 }

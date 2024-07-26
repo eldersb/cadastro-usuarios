@@ -49,6 +49,7 @@
                                     placeholder="7199999999" value="{{ $cliente->telefone }}">
                             </div>
 
+
                             <button type="button" class="btn btn-primary" onclick="confirmarExclusao()">Editar</button>
                             <a class="btn btn-success" href=" {{ route('cliente') }}">Listagem de clientes</a>
                         </form>
@@ -76,10 +77,7 @@
         }).then((result) => {
             if (result.isConfirmed) {
                 Swal.fire("Salvo!", "", "success").then(() => {
-                    // Adiciona um atraso antes de submeter o formulário
-                    setTimeout(() => {
-                        document.getElementById('editarCliente').submit();
-                    }, 1000); // Atraso de 1 segundo
+                    document.getElementById('editarCliente').submit();
                 });
 
             } else if (result.isDenied) {

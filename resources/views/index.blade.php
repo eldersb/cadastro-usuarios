@@ -15,8 +15,6 @@
         @include("partials.menu")
     </header>
 
-
-
     <section>
 
         <div class="container ">
@@ -24,13 +22,13 @@
                 <div class="col-md-12">
 
                     <div class="d-flex justify-content-center align-items-center">
-                        <div class="container-child col-md-8">
+                        <div class="container-child col-sm-2 col-md-8">
 
                             <div class="p-1 bg-success bg-opacity-80 border border-success rounded mt-3 mb-3">
                                 <h2 class="p-2 m-2 text-light text-center">Listagem de Clientes</h2>
                             </div>
 
-                            <table class="table mt-4">
+                            <table class="table table-responsive mt-4">
                                 <thead class="table-success">
 
                                   <tr>
@@ -68,16 +66,29 @@
 
                               </table>
 
-                              <div class="d-flex justify-content-end align-items-center">
-                                <a href=" {{ route('cadastro.create') }}" class="btn btn-info text-light"> Cadastrar novo cliente</a>
-                            </div>
+
+
+                              <div class="d-flex justify-content-center align-items-center gap-3">
+
+                                <div class="mt-3">
+                                    {{ $clientes->links() }}
+                                </div>
+
+                                <a href=" {{ route('cadastro.create') }}" class="btn btn-info text-light"> Novo cliente</a>
+
+
+                              </div>
+
+
+
+
+
+
+
                         </div>
 
 
                     </div>
-
-
-
 
                 </div>
             </div>
