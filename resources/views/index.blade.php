@@ -40,6 +40,7 @@
                                     <th></th>
 
 
+
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -62,10 +63,15 @@
                                                         ['id' => $cliente->id]) }}"><i class="bi bi-arrow-clockwise"></i>Editar
                                                     </a>
                                                     <button type="submit" class="btn btn-sm btn-danger d-flex gap-1"><i class="bi bi-trash"></i>Excluir</button>
-                                                    <a href="{{ route('cliente.show', ['id' => $cliente->id]) }}" class="btn btn-warning">Ver cliente</a>
+                                                    <a href="{{ route('cliente.show', ['id' => $cliente->id]) }}"
+                                                        class="btn btn-sm btn-warning text-light d-flex gap-1 ">
+                                                        <i class="bi bi-eye"></i> Exibir
+                                                    </a>
+
                                                 </form>
 
                                             </td>
+
 
                                         </tr>
 
