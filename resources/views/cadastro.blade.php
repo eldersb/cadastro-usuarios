@@ -63,7 +63,7 @@
                             </button>
                             <a class="btn btn-warning mt-2" href="{{ route('cliente') }}">
                                 <i class="bi bi-list-ol"></i> Listagem de clientes
-                              </a>
+                            </a>
 
                         </div>
 
