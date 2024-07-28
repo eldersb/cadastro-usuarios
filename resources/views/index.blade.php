@@ -39,6 +39,7 @@
                                     <th>Cadastrado:</th>
                                     <th></th>
 
+
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -51,15 +52,21 @@
                                             <td>{{ $cliente->telefone }}</td>
                                             <td>{{ $cliente->created_at->format('d/m/Y à\s H:i')}}</td>
 
+
                                             <td>
-                                                <form action=" {{ route('cliente.destroy', ['id' => $cliente->id]) }}" method="post">
+                                                <form action=" {{ route('cliente.destroy', ['id' => $cliente->id]) }}" method="post" class="d-flex gap-2">
                                                     @csrf
                                                     @method("delete")
-                                                    <a class="btn btn-sm btn-primary text-light" href="{{ route('cliente.edit', ['id' => $cliente->id]) }}">Editar</a>
-                                                    <button type="submit" class="btn btn-sm btn-danger" >Excluir</button>
+                                                    <a class="btn btn-sm btn-primary text-light d-flex gap-1"
+                                                        href="{{ route('cliente.edit',
+                                                        ['id' => $cliente->id]) }}"><i class="bi bi-arrow-clockwise"></i>Editar
+                                                    </a>
+                                                    <button type="submit" class="btn btn-sm btn-danger d-flex gap-1"><i class="bi bi-trash"></i>Excluir</button>
+                                                    <a href="{{ route('cliente.show', ['id' => $cliente->id]) }}" class="btn btn-warning">Ver cliente</a>
                                                 </form>
 
                                             </td>
+
                                         </tr>
 
                                         @endforeach
@@ -77,7 +84,7 @@
                                     {{ $clientes->links() }}
                                 </div>
 
-                                <a href=" {{ route('cadastro.create') }}" class="btn btn-primary text-light"> Novo cliente</a>
+                                <a href=" {{ route('cadastro.create') }}" class="btn btn-primary text-light d-flex gap-1">  <i class="bi bi-pencil-square"></i>Cadastrar </a>
 
 
                               </div>

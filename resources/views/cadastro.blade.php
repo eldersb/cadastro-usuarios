@@ -57,8 +57,16 @@
 
                         </div>
 
-                        <button type="submit" class="btn btn-primary mt-2">Cadastrar</button>
-                        <a type="submit" class="btn btn-warning  mt-2" href=" {{ route('cliente') }}">Listagem de clientes</a>
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-primary mt-2 d-flex gap-1">
+                                <i class="bi bi-pencil-square"></i>Cadastrar cliente
+                            </button>
+                            <a class="btn btn-warning mt-2" href="{{ route('cliente') }}">
+                                <i class="bi bi-list-ol"></i> Listagem de clientes
+                              </a>
+
+                        </div>
+
 
                     </form>
 

@@ -43,7 +43,7 @@ class ClienteController extends Controller
     {
 
         $arquivo = $request->file('cover');
-        $arquivo->store('cliente');
+        $arquivo->store('public/cliente');
 
         $dadosValidados = $request->validated();
         $dadosValidados['cover'] = $arquivo->hashName();
@@ -54,6 +54,8 @@ class ClienteController extends Controller
 
         return redirect()->route('cadastro.create');
 
+
+
     }
 
     /**
@@ -62,9 +64,11 @@ class ClienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
+        $cliente = Cliente::find($id);
 
+        return view('partials/card', compact('cliente'));
 
     }
 

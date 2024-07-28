@@ -23,6 +23,7 @@ Route::get('/cliente', [ClienteController::class, 'index'])->name('cliente');
 
 Route::get('cliente/cadastro', [ClienteController::class, 'create'])->name('cadastro.create');
 Route::post('cliente/cadastro', [ClienteController::class, 'store'])->name('cadastro.store');
+Route::get('cliente/exibir/{id}', [ClienteController::class, 'show'])->name('cliente.show');
 
 Route::get('cliente/editar/{id}', [ClienteController::class, 'edit'])->name('cliente.edit');
 Route::put('cliente/editar/{id}', [ClienteController::class, 'update'])->name('cliente.update');
