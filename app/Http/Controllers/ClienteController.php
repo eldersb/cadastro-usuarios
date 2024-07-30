@@ -18,7 +18,7 @@ class ClienteController extends Controller
 
         $clientes = Cliente::paginate(5);
 
-        return view('index', ['clientes' => $clientes]);
+        return view('clientes/index', ['clientes' => $clientes]);
 
     }
 
@@ -29,7 +29,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        return view('cadastro');
+        return view('clientes/cadastro');
 
     }
 
@@ -83,7 +83,7 @@ class ClienteController extends Controller
 
         $cliente = Cliente::find($id);
 
-        return view('edit', compact('cliente'));
+        return view('clientes/edit', compact('cliente'));
 
     }
 

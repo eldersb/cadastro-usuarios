@@ -22,13 +22,13 @@
                 <div class="col-md-12">
 
                     <div class="d-flex justify-content-center align-items-center">
-                        <div class="container-child col-sm-2 col-md-8">
+                        <div class="container-child col-md-8">
 
                             <div class="p-1 bg-dark bg-opacity-80 border border-success rounded mt-3 mb-3">
                                 <h2 class="p-2 m-2 text-light text-center">Listagem de Clientes</h2>
                             </div>
 
-                            <table class="table table-responsive mt-4">
+                            <table class="table mt-4">
                                 <thead class="table-secondary">
 
                                   <tr>
@@ -38,8 +38,6 @@
                                     <th>Telefone</th>
                                     <th>Cadastrado:</th>
                                     <th></th>
-
-
 
                                 </tr>
                                 </thead>
@@ -130,6 +128,6 @@
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

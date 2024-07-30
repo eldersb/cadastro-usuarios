@@ -8,13 +8,31 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
             <ul class="navbar-nav mb-2 mb-lg-0">
 
-                <li class="nav-item">
-                    <a class="nav-link d-flex gap-2 text-light" href="{{ route('cliente') }}"> <i class="bi bi-person-circle"></i>Listagem de Clientes</a>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Listagem
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item d-flex gap-2" href="{{ route('cliente') }}"><i class="bi bi-person-circle"></i>Cliente</a></li>
+                      <li><a class="dropdown-item d-flex gap-2" href="{{ route('produto') }}"><i class="bi bi-bag"></i>Produtos</a></li>
+                    </ul>
                 </li>
 
-                <li class="nav-item">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Cadastro
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item d-flex gap-2" href="{{ route('cadastro.create') }}"><i class="bi bi-person-circle"></i>Clientes</a></li>
+                      <li><a class="dropdown-item d-flex gap-2" href="{{ route('produto.cadastro.create') }}"><i class="bi bi-bag"></i>Produtos</a></li>
+                    </ul>
+                  </li>
+
+                {{-- <li class="nav-item">
                     <a class="nav-link d-flex gap-2 text-light" href="{{ route('cadastro.create') }}"> <i class="bi bi-person-circle"></i>Cadastro</a>
-                </li>
+                </li> --}}
+
 
                 <li class="nav-item">
                     <a class="nav-link d-flex gap-2 text-light" href="#"><i class="bi bi-search"></i>Consulta</a>
